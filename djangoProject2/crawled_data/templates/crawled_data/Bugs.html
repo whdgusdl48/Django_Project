@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'crawled_data/style.css' %}" />
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>BUGS REAL TIME MUSIC</h1>
+    <div>
+        <button onclick="window.location.reload();"> refresh</button>
+        <button><a href="http://127.0.0.1:8000/Music">Back</a></button>
+    </div>
+
+    {% if Bugs_list%}
+        <table>
+            <tr>
+                <td>
+                    순위
+                </td>
+                <td>
+                    앨범 이미지
+                </td>
+                <td>
+                    제목
+                </td>
+                <td>
+                    가수
+                </td>
+            </tr>
+            {% for item in Bugs_list %}
+                <tr>
+                    <td>
+                        {{ item.ranking }}
+                    </td>
+                    <td>
+                        <img src={{ item.imgurl }}></img>
+                    </td>
+                    <td>
+                        {{ item.title }}
+                    </td>
+                    <td>
+                        {{ item.artist }}
+                    </td>
+                </tr>
+
+            {% endfor %}
+        </table>
+    {% else %}
+        <p> 아직 데이터를 수집중입니다</p>
+    {% endif %}
+</body>
+</html>
