@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+    margin-top : 15px;
+  }
+th, td {
+    border: 1px solid #444444;
+    text-align: center;
+}
+img {
+    width : 100px;
+    height : 100px;
+}
